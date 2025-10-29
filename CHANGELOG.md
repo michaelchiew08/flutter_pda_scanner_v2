@@ -1,3 +1,7 @@
+## 0.0.4
+
+* Update the `README.md` file.
+
 ## 0.0.3
 
 * Remove the `this.` keyword from `initScanner()` and `disposeScanner()` methods.
