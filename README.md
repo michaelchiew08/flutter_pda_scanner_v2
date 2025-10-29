@@ -10,7 +10,7 @@ Add this to your package's pubspec.yaml file:
 
 ```yaml
 dependencies:
-  flutter_pda_scanner_v2: ^0.0.2
+  flutter_pda_scanner_v2: ^0.0.3
 ```
 
 ## Supported Device Models

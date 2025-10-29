@@ -23,12 +23,12 @@ mixin PdaListenerMixin<T extends StatefulWidget> on State<T> {
   @override
   void initState() {
     super.initState();
-    this.initScanner();
+    initScanner();
   }
 
   @override
   void dispose() {
-    this.disposeScanner();
+    disposeScanner();
     super.dispose();
   }
 
