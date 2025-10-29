@@ -25,26 +25,18 @@ dependencies:
 
 ## Usage
 ```dart
-/// Import package of `pda_lifecycle_mixin.dart`
-import 'package:flutter_pda_scanner_v2/pda_lifecycle_mixin.dart';
+/// Import package of `flutter_pda_scanner_v2.dart`
+import 'package:flutter_pda_scanner_v2/flutter_pda_scanner_v2.dart';
 
-///
-class RootApp extends ConsumerStatefulWidget {
-  const RootApp({super.key});
-
-  @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _RootAppState();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Initialize the PdaScanner.
+  await PdaScanner.instance.initialize();
+  runApp(const MyApp());
 }
 
-class _RootAppState extends State<RootApp> with PdaLifecycleMixin<RootApp> {
-  @override
-  Widget build(BuildContext context) {
-    // Return rest of your code such as MaterialApp, Scaffold, your root widget and etc.
-  }
-}
-
-/// Import package of `pda_listener_mixin.dart`
-import 'package:flutter_pda_scanner_v2/pda_listener_mixin.dart';
+/// Import package of `flutter_pda_scanner_v2.dart`
+import 'package:flutter_pda_scanner_v2/flutter_pda_scanner_v2.dart';
 class ScreenExampleState extends State<ScreenExample> with PdaListenerMixin<ScreenExample> {
   var _code;
 
@@ -54,6 +46,7 @@ class ScreenExampleState extends State<ScreenExample> with PdaListenerMixin<Scre
     // Or return your own widget.
   }
 
+  // Add these @override methods to listen to scanner events.
   @override
   void onEvent(Object event) {
       // Process the value of the `event.toString()` here.
