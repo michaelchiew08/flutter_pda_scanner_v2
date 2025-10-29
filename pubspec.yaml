@@ -1,5 +1,6 @@
 name: flutter_pda_scanner_v2
-description: "A new Flutter plugin project."
+description: "Flutter plugin that supports wide range of 📱 PDA handheld scanner devices."
+homepage: https://github.com/michaelchiew08/flutter_pda_scanner_v2
 version: 0.0.1
 
 environment:
