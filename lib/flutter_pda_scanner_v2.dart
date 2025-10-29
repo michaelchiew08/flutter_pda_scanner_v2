@@ -11,13 +11,13 @@ mixin PdaListenerMixin<T extends StatefulWidget> on State<T> {
   void initScanner() {
     PdaScanner.instance.registerListener(this);
     _isListening = true;
-    print('Scanner initialized');
+    debugPrint('Scanner initialized');
   }
 
   void disposeScanner() {
     PdaScanner.instance.unregisterListener(this);
     _isListening = false;
-    print('Scanner disposed');
+    debugPrint('Scanner disposed');
   }
 
   @override
