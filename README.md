@@ -24,6 +24,7 @@ dependencies:
 -  [x] KAICOM(凯立)-PDA
 
 ## Usage
+In your main.dart file, add the following code:
 ```dart
 /// Import package of `flutter_pda_scanner_v2.dart`
 import 'package:flutter_pda_scanner_v2/flutter_pda_scanner_v2.dart';
@@ -34,9 +35,14 @@ void main() async {
   await PdaScanner.instance.initialize();
   runApp(const MyApp());
 }
+```
 
+
+Then in your widget or screen state file, add the following code:
+```dart
 /// Import package of `flutter_pda_scanner_v2.dart`
 import 'package:flutter_pda_scanner_v2/flutter_pda_scanner_v2.dart';
+
 class ScreenExampleState extends State<ScreenExample> with PdaListenerMixin<ScreenExample> {
   var _code;
 
