@@ -4,13 +4,21 @@
 
 Flutter plugin that supports wide range of 📱 PDA handheld scanner devices.
 
+![flutter_pda_scanner_v2.gif](https://miro.medium.com/v2/resize:fit:640/format:webp/1*HzLH_-r_R0tyEgOlY7CVkw.gif)
+
+## About
+
+Originally fork and reference via [pda_scanner](https://github.com/wu9007/pda_scanner) and [flutter_pda_scanner](https://github.com/uupy/pda_scanner) by Shusheng or the original creator.
+
+Currently this repo is maintained by [me](https://github.com/michaelchiew08) to include the support for Android V2 Embedding and fixing some other Honeywell PDA devices.
+
 ## Installation
 
 Add this to your package's pubspec.yaml file:
 
 ```yaml
 dependencies:
-  flutter_pda_scanner_v2: ^0.0.4
+  flutter_pda_scanner_v2: ^0.0.5
 ```
 
 ## Supported Device Models
@@ -24,7 +32,7 @@ dependencies:
 -  [x] KAICOM(凯立)-PDA
 
 ## Usage
-In your main.dart file, add the following code:
+In your `main.dart` file, add the following code:
 ```dart
 /// Import package of `flutter_pda_scanner_v2.dart`
 import 'package:flutter_pda_scanner_v2/flutter_pda_scanner_v2.dart';
@@ -38,7 +46,7 @@ void main() async {
 ```
 
 
-Then in your widget or screen state file, add the following code:
+Then in your `widget` or `screen` state file, add the following code:
 ```dart
 /// Import package of `flutter_pda_scanner_v2.dart`
 import 'package:flutter_pda_scanner_v2/flutter_pda_scanner_v2.dart';
@@ -68,12 +76,6 @@ class ScreenExampleState extends State<ScreenExample> with PdaListenerMixin<Scre
 ## License
 
 Distributed under the MIT license. See `LICENSE` for more information.
-
-## About
-
-Originally fork and reference via [pda_scanner](https://github.com/wu9007/pda_scanner) and [flutter_pda_scanner](https://github.com/uupy/pda_scanner) by Shusheng or the original creator.
-
-Currently this repo is maintained by [Michael Chiew](https://github.com/michaelchiew08) to include support for Android V2 Embedding.
 
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE
