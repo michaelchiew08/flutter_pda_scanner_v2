@@ -1,3 +1,7 @@
+## 0.0.6
+
+* Fix the NEWLAND(新大陆)-PDA scanner that does not register the broadcast receiver.
+
 ## 0.0.5
 
 * Update the `README.md` file.

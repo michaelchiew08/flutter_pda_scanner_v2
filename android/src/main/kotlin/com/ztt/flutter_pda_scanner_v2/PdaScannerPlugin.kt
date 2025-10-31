@@ -136,6 +136,10 @@ class PdaScannerPlugin: FlutterPlugin, EventChannel.StreamHandler, ActivityAware
       IntentFilter().apply { 
         addAction(HONEYWELL_EDA_SCAN_ACTION)
         priority = Integer.MAX_VALUE 
+      },
+      IntentFilter().apply { 
+        addAction(NL_SCAN_ACTION)
+        priority = Integer.MAX_VALUE 
       }
     )
 
