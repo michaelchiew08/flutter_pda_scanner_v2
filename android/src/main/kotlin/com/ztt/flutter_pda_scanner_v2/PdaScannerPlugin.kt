@@ -24,6 +24,7 @@ class PdaScannerPlugin: FlutterPlugin, EventChannel.StreamHandler, ActivityAware
     private const val HONEYWELL_SCAN_ACTION = "com.honeywell.decode.intent.action.EDIT_DATA"
     private const val HONEYWELL_EDA_SCAN_ACTION = "com.honeywell.scan.broadcast"
     private const val NL_SCAN_ACTION = "nlscan.action.SCANNER_RESULT"
+    private const val SUNMI_SCAN_ACTION = "com.sunmi.scanner.ACTION_DATA_CODE_RECEIVED"
     private const val HIK_SCAN_ACTION_1 = "com.service.scanner.data"
     private const val HIK_SCAN_ACTION_2 = "android.intent.action.SCANNER_SERVICE"
     private const val HIK_SCAN_ACTION_3 = "android.intent.ACTION_SCAN_OUTPUT"
@@ -54,7 +55,7 @@ class PdaScannerPlugin: FlutterPlugin, EventChannel.StreamHandler, ActivityAware
               eventSink?.success(result)
             }
           }
-          BARCODE_DATA_ACTION, HONEYWELL_SCAN_ACTION, HONEYWELL_EDA_SCAN_ACTION -> {
+          BARCODE_DATA_ACTION, HONEYWELL_SCAN_ACTION, HONEYWELL_EDA_SCAN_ACTION, SUNMI_SCAN_ACTION -> {
             eventSink?.success(it.getStringExtra("data"))
           }
           NL_SCAN_ACTION -> {
@@ -149,6 +150,10 @@ class PdaScannerPlugin: FlutterPlugin, EventChannel.StreamHandler, ActivityAware
       IntentFilter().apply { 
         addAction(NL_SCAN_ACTION)
         priority = Integer.MAX_VALUE 
+      },
+      IntentFilter().apply { 
+        addAction(SUNMI_SCAN_ACTION)
+        priority = Integer.MAX_VALUE
       },
       IntentFilter().apply { 
         addAction(HIK_SCAN_ACTION_1)

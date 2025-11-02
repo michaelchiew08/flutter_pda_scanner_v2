@@ -1,3 +1,7 @@
+## 0.0.8
+
+* Add support for SUNMI scanner.
+
 ## 0.0.7
 
 * Add support for Hikvision scanner.
