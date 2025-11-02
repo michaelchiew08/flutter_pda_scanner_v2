@@ -22,8 +22,11 @@ class PdaScannerPlugin: FlutterPlugin, EventChannel.StreamHandler, ActivityAware
     private const val PL_SCAN_ACTION = "scan.rcv.message"
     private const val BARCODE_DATA_ACTION = "com.ehsy.warehouse.action.BARCODE_DATA"
     private const val HONEYWELL_SCAN_ACTION = "com.honeywell.decode.intent.action.EDIT_DATA"
-		private const val HONEYWELL_EDA_SCAN_ACTION = "com.honeywell.scan.broadcast"
+    private const val HONEYWELL_EDA_SCAN_ACTION = "com.honeywell.scan.broadcast"
     private const val NL_SCAN_ACTION = "nlscan.action.SCANNER_RESULT"
+    private const val HIK_SCAN_ACTION_1 = "com.service.scanner.data"
+    private const val HIK_SCAN_ACTION_2 = "android.intent.action.SCANNER_SERVICE"
+    private const val HIK_SCAN_ACTION_3 = "android.intent.ACTION_SCAN_OUTPUT"
   }
 
   private var activity: Activity? = null
@@ -54,8 +57,14 @@ class PdaScannerPlugin: FlutterPlugin, EventChannel.StreamHandler, ActivityAware
           BARCODE_DATA_ACTION, HONEYWELL_SCAN_ACTION, HONEYWELL_EDA_SCAN_ACTION -> {
             eventSink?.success(it.getStringExtra("data"))
           }
-					NL_SCAN_ACTION -> {
+          NL_SCAN_ACTION -> {
             eventSink?.success(it.getStringExtra("SCAN_BARCODE1"))
+          }
+          HIK_SCAN_ACTION_1 -> {
+            eventSink?.success(it.getStringExtra("ScanCode"))
+          }
+          HIK_SCAN_ACTION_2, HIK_SCAN_ACTION_3 -> {
+            eventSink?.success(it.getStringExtra("barcode"))
           }
           else -> {
             Log.i("PdaScannerPlugin", "NoSuchAction")
@@ -140,6 +149,18 @@ class PdaScannerPlugin: FlutterPlugin, EventChannel.StreamHandler, ActivityAware
       IntentFilter().apply { 
         addAction(NL_SCAN_ACTION)
         priority = Integer.MAX_VALUE 
+      },
+      IntentFilter().apply { 
+        addAction(HIK_SCAN_ACTION_1)
+        priority = Integer.MAX_VALUE
+      },
+      IntentFilter().apply { 
+        addAction(HIK_SCAN_ACTION_2)
+        priority = Integer.MAX_VALUE
+      },
+      IntentFilter().apply { 
+        addAction(HIK_SCAN_ACTION_3)
+        priority = Integer.MAX_VALUE
       }
     )
 

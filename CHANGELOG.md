@@ -1,3 +1,7 @@
+## 0.0.7
+
+* Add support for Hikvision scanner.
+
 ## 0.0.6
 
 * Fix the NEWLAND(新大陆)-PDA scanner that does not register the broadcast receiver.

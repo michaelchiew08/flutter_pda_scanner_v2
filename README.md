@@ -18,7 +18,7 @@ Add this to your package's pubspec.yaml file:
 
 ```yaml
 dependencies:
-  flutter_pda_scanner_v2: ^0.0.6
+  flutter_pda_scanner_v2: ^0.0.7
 ```
 
 ## Supported Device Models
@@ -30,6 +30,7 @@ dependencies:
 -  [x] PL(攀凌)-PDA
 -  [x] NEWLAND(新大陆)-PDA
 -  [x] KAICOM(凯立)-PDA
+-  [x] HIKVISION(海康)-PDA
 
 ## Usage
 In your `main.dart` file, add the following code:
